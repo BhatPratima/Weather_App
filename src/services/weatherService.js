@@ -103,9 +103,18 @@ const formatDailyForecast = (forecast, timezone) => {
 const formatAstroData = (forecast) => {
   const {
     astro: { sunrise, sunset, moonrise, moonset },
+    day:{ maxtemp_c, mintemp_c, mintemp_f, maxtemp_f },
   } = forecast[0];
 
-  return { sunrise, sunset, moonrise, moonset };
+  return { 
+    sunrise, 
+    sunset, 
+    moonrise, 
+    moonset, 
+    maxtemp_c, 
+    mintemp_c, 
+    mintemp_f, 
+    maxtemp_f, };
 };
 
 const formatToLocalTime = (

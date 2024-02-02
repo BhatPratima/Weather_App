@@ -40,8 +40,10 @@ const TemperatureAndDetails = ({
     wind_mph,
     sunrise,
     sunset,
-    moonrise,
-    moonset,
+    maxtemp_c, 
+    mintemp_c, 
+    mintemp_f, 
+    maxtemp_f,
   },
 }) => {
   const horizontalDetails = [
@@ -80,15 +82,15 @@ const TemperatureAndDetails = ({
     },
     {
       id: 3,
-      icon: WiMoonrise,
-      text: "moonrise",
-      data: moonrise,
+      icon:BsThermometerHalf,
+      text: "Min Temperature",
+      data: `${unit === "c"? mintemp_c : mintemp_f}°`,
     },
     {
       id: 4,
-      icon: WiMoonset,
-      text: "moonset",
-      data: moonset,
+      icon: BsThermometerHalf,
+      text: "Max Temperatute",
+      data: `${unit === "c"? maxtemp_c : maxtemp_f}°`,
     },
   ];
 

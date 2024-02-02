@@ -19,8 +19,10 @@ const App = () => {
       toast.info("Fetching weather for " + city);
       await getFormattedWeatherData(city).then((data) => {
         toast.success(`Fetched ${data.loc_name}, ${data.loc_country}`);
-        console.log(data);
         setWeather(data);
+      })
+      .catch((error) => {
+        toast.error(`Invalid Place ${city}`);
       });
     };
 
